@@ -1,0 +1,91 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script  defer src="./index.js"> </script>
+    <script  defer src="./modal.js"> </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css" media="screen"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</head>  
+
+
+   
+    <body>
+        <img  src="./imagenes/open.jpg" alt="300">
+        <title>OPEN25HORAS</title>
+        <div>
+            <br><br><br><h1 class="anim">ADEMÁS DE SER UN KIOSCO,</h1><br> 
+            <h1 class="anim">TENEMOS ALGUNAS BEBIDAS</h1><br> <br> 
+      
+             <p class="lead" id="terr"> <b> Pedido del público anexamos un sector nuevo:<br>
+                BEBIDAS ALCOHOLICAS ,la única forma que sea posible hacer el pedido es tener el DNI,<br> 
+              en la entrega el repartidor confirmará que SOS MAYOR DE EDAD, de lo contrario no se realizará la compra </b> </p>     
+          </div>
+          <header>
+          <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+          </header>
+          <center>
+          <div class="caja1" >
+            <p>DOLAR OFICIAL</p>
+            <p id="dolar"></p>
+          </div>
+          <div class="caja2">
+            <p>DOLAR BLUE</p>
+            <p id="dolarBlue"></p>
+          </div>
+          <div class="caja3">
+            <p>DOLAR BOLSA</p>
+            <p id="dolarBolsa"></p>
+        </center>
+          </div>
+          <div class="container my-5 text-center">
+            <button class="btn btn-danger w-100" onclick="traer()">VER PRECIO DEL DOLAR</button>
+           
+            <div class="mt-5" id="contenido">
+          
+
+              </div>      
+             </div>
+          <main id="contenedor-productos">
+
+        </main>
+    
+        <div class="modal-contenedor">
+            <div class="modal-carrito">
+                <h3>Carrito</h3>
+                <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+             <div id="carrito-contenedor">
+                     </div>
+                <p class="precioProducto">Precio total: USS$<span id="precioTotal">0</span></p>
+                <button id="vaciar-carrito" class="boton-agregar">Vaciar carrito</button> 
+              </div>
+    
+               <button id="boton-carrito" onclick="window.location.href='./micarrito.html'"><i class="fas fa shopping-cart"></i>FINALIZAR COMPRA</button>
+
+         
+
+<script>
+    const contenido = document.querySelector('#contenido')
+    function traer() {
+
+        fetch('https://www.dolarsi.com/api/api.php?type=valoresprincipales')
+
+     .then(res => res.json())
+     .then(data => {
+       const dolar=data['0']['casa']['compra']
+       const dolarBlue=data['1']['casa']['compra']
+       const dolarBolsa=data['4']['casa']['compra']
+        console.log(data)
+        console.log(data['0']['casa']['compra'])
+        document.getElementById('dolar').innerHTML=dolar
+        document.getElementById('dolarBlue').innerHTML=dolarBlue
+        document.getElementById('dolarBolsa').innerHTML=dolarBolsa    })
+} 
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <script defer  src="micarrito.js"></script>
+        <title>OPEN25HORAS</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="estilos.css" media="screen"/>
+    </head>
+        <title> carrito</title>
+    <body>
+        <h1>FIN DE LA COMPRA</h1><br> <br>
+        <p>Le tomaremos los datos correspondientes para poder finalizar la compra</p><BR></BR>
+        <a class="volver" href="index.html" >volver</a><BR></BR>
+        <main>
+            <form action="" class="formulario" id="formulario">
+                <div class="formulario__grupo" id="grupo__usuario">
+                    <label for="Dirección del envío" class="formulario__label">Dirección del envío</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="Dirección del envío" id="direccionDelEnvio" placeholder="calle falsa 123">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">La dirección tiene que tener números y palabras </p>
+                </div>
+    
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Homero Simpson">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 letras</p>
+                </div>
+                    <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo Electrónico</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El correo solo puede contener letras, números, puntos, guiones y guion bajo.</p>
+                </div>    
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="telefono" class="formulario__label">Teléfono</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="telefono" id="telefono" placeholder="00112233445
+                        ">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                    </div>
+                    <p class="formulario__input-error">El telefono solo puede contener números y el maximo son 14 dígitos.</p>
+                </div>    
+                <div class="formulario__grupo" id="grupo__terminos">
+                    <label class="formulario__label">
+                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                        Acepto los Terminos y Condiciones
+                    </label>
+                </div>
+    
+                <div class="formulario__mensaje" id="formulario__mensaje">
+
+                   <br><br> <p><i class="fas fa-exclamation-triangle"></i> <b> Datos CORRECTOS! en 40 min llega el pedido, CHIN,CHIN! </b></p><br>
+                </div>
+    
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="submit" id="btnRegistrar"  class="formulario__btn">Enviar</button>
+                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Datos CORRECTOS! en 40 min llega el pedido, CHIN,CHIN!</p>
+                </div>
+          
+            </form>
+        </main>
+    </body>
+    </html>
